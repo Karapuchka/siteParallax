@@ -1,6 +1,10 @@
 @import 'nullstyle.scss';
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .preloader {
     position: absolute;
     top: 0;
@@ -19,7 +23,6 @@
         transform: translateX(-15px);
         text-shadow: 5px 6px black, 6px 6px black;
         font-size: 55px;
-        font-family: 'Montserrat', sans-serif;
         margin-right: 10px;
         z-index: 4;
         display: flex;
@@ -50,6 +53,116 @@
     transform: translate(-50%, -50%);
     background: rgba($color: #656565, $alpha: .4);
     opacity: 0;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &__line {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__picture {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 20px;
+
+            &__img {
+                height: 290px;
+                width: 324px;
+                background-color: #EAE9E9;
+                margin-bottom: 20px;
+            }
+
+            &__description {
+                color: #fff;
+                font-size: 36px;
+                text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+                text-transform: capitalize;
+            }
+        }
+
+        &__paragraf {
+            text-align: justify;
+            font-size: 36px;
+            color: #fff;
+            line-height: 45px;
+        }
+
+        &__paragraf--margin-left{
+            margin-left: 100px;
+        }
+
+        &__paragraf--margin-top{
+            margin-top: 50px;
+        }
+
+        &__links {
+            border-top: 1px solid #fff;
+            width: 400px;
+            margin: 0 auto;
+            padding: 60px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__icon {
+                width: 46px;
+                height: 46px;
+                background-color: #fff;
+                margin-right: 34px;
+                cursor: pointer;
+            }
+
+            &__icon:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__item--flex-column{
+        flex-direction: column;
+    }
+    
+    &__btns {
+        display: flex;
+        position: relative;
+
+        &__icon {
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #fff;
+            width: 15px;
+            height: 15px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+
+        &__icon:last-child {
+            margin-right: 0;
+        }
+
+        &__icon--active{
+            background-color: #EAE9E9;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 }
 
 .parallax {
